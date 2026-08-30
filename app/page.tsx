@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-img-element */
 import { SectionNav } from "@/components/section-nav";
-import Image from "next/image";
 
 const stages = [
   {
@@ -183,7 +183,7 @@ const terms = [
 ];
 
 function Logo({ inverse = false }: { inverse?: boolean }) {
-  return <Image className={inverse ? "brand-logo inverse" : "brand-logo"} src="/connectx-logo.png" alt="ConnectX Events" width={201} height={61} priority />;
+  return <img className={inverse ? "brand-logo inverse" : "brand-logo"} src="/connectx-logo.png" alt="ConnectX Events" width="201" height="61" />;
 }
 
 export default function Home() {
