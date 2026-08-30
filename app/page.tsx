@@ -495,13 +495,17 @@ export default function Home() {
           <div className="signatory-group">
             <img src="/uday-rathore-signature.png" alt="Signature of Uday Rathore" width="871" height="477" />
             <div className="signatory-details">
-              <div><span>Prepared by</span><strong>Uday Rathore</strong></div>
-              <a className="call-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204" title="Call +91 87927 45204">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
-              </a>
+              <div>
+                <span>Prepared by</span>
+                <strong>Uday Rathore</strong>
+                <a className="phone-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
+                  <span>+91 87927 45204</span>
+                </a>
+              </div>
             </div>
           </div>
-          <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download>
+          <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download aria-label="Download proposal PDF" title="Download proposal PDF">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>
             <span><small>PDF document</small>Download proposal</span>
           </a>
