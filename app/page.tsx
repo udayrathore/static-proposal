@@ -1,5 +1,6 @@
 /* oxlint-disable next/no-img-element */
 import { SectionNav } from "@/components/section-nav";
+import { AgencyDetails } from "@/components/agency-details";
 
 const stages = [
   {
@@ -483,7 +484,10 @@ export default function Home() {
           <div className="outro-top-right">
             <div className="agency-group">
               <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
-              <div><strong>ArtWorksIT</strong><a href="https://artworksit.com" target="_blank" rel="noopener noreferrer">artworksit.com</a></div>
+              <div>
+                <a className="agency-name" href="https://artworksit.com" target="_blank" rel="noopener noreferrer">ArtWorksIT</a>
+                <AgencyDetails />
+              </div>
             </div>
           </div>
         </div>
