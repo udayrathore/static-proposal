@@ -180,7 +180,6 @@ const boundaries = [
 const technical = [
   "Laravel",
   "Filament",
-  "GSAP",
   "Livewire",
   "Alpine JS",
   "MYSQL",
