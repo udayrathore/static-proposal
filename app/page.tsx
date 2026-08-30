@@ -4,6 +4,7 @@ import { SectionNav } from "@/components/section-nav";
 const stages = [
   {
     number: "01",
+    date: "31 Aug – 13 Sep 2026",
     title: "Research & Product Definition",
     duration: "2 weeks",
     paragraphs: [
@@ -15,6 +16,7 @@ const stages = [
   },
   {
     number: "02",
+    date: "31 Aug – 13 Sep 2026",
     title: "Wireframing & User Experience",
     duration: "Included within the initial product definition and wireframing phase",
     paragraphs: [
@@ -27,6 +29,7 @@ const stages = [
   },
   {
     number: "03",
+    date: "14 Sep – 4 Oct 2026",
     title: "Design & Prototyping",
     duration: "3 weeks",
     paragraphs: [
@@ -39,6 +42,7 @@ const stages = [
   },
   {
     number: "04",
+    date: "31 Aug – Mid-Nov 2026",
     title: "Development",
     duration: "Runs progressively through the development period",
     paragraphs: [
@@ -51,6 +55,7 @@ const stages = [
   },
   {
     number: "05",
+    date: "Mid-November 2026",
     title: "Testing & Launch",
     duration: "Included within the overall project timeline",
     paragraphs: [
@@ -204,7 +209,7 @@ export default function Home() {
         </div>
         <div className="hero-meta">
           <div><span>Prepared by</span><strong>ArtWorksIT</strong></div>
-          <div><span>Project start</span><strong>1 September 2026</strong></div>
+          <div><span>Project start</span><strong>31st August 2026</strong></div>
           <div><span>Project completion</span><strong>Mid-November 2026</strong></div>
           <div><span>Project timeline</span><strong>10 to 11 weeks</strong></div>
         </div>
@@ -236,14 +241,14 @@ export default function Home() {
           <p>A key objective will be to ensure that the platform is not approached simply as a marketplace for venues or individual vendors. The proposed experience will instead begin functioning as an event planning platform from Phase One.</p>
         </div>
         <div className="timeline-summary">
-          <div><span>Proposed project start</span><strong>1st September 2026</strong></div>
+          <div><span>Proposed project start</span><strong>31st August 2026</strong></div>
           <div><span>Proposed project completion</span><strong>Mid-November 2026</strong></div>
           <div><span>Project timeline</span><strong>Approximately 10 to 11 weeks</strong></div>
         </div>
         <div className="stage-list">
           {stages.map((stage) => (
             <article className="stage" key={stage.number}>
-              <div className="timeline-marker" aria-hidden="true"><span>{stage.number}</span></div>
+              <div className="timeline-marker"><span>{stage.date}</span></div>
               <div className="stage-body">
                 <div className="stage-head"><h3>{stage.title}</h3><p>{stage.duration}</p></div>
                 <div className="stage-copy">{stage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
@@ -310,7 +315,7 @@ export default function Home() {
             <caption className="sr-only">Payment milestones</caption>
             <thead><tr className="table-row table-head"><th>Milestone</th><th>Timeline</th><th>Payment</th></tr></thead>
             <tbody>
-              <tr className="table-row"><th>Initiation</th><td>1st September 2026</td><td>₹3,30,000 (33%)</td></tr>
+              <tr className="table-row"><th>Initiation</th><td>31st August 2026</td><td>₹3,30,000 (33%)</td></tr>
               <tr className="table-row"><th>Design Sign-off</th><td>Design completion / mid-project</td><td>₹3,30,000 (33%)</td></tr>
               <tr className="table-row"><th>Project Go-live</th><td>Mid-November 2026</td><td>₹3,40,000 (34%)</td></tr>
             </tbody>
@@ -343,11 +348,14 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <Logo inverse />
-        <p>Statement of Work · Phase One</p>
-        <div><span>Prepared by</span><strong>Uday Rathore, ArtWorksIT</strong></div>
-      </footer>
+      <section className="outro-section">
+        <div className="outro-top"><Logo inverse /><span>30 August 2026</span></div>
+        <div className="outro-content">
+          <p>Statement of Work</p>
+          <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
+        </div>
+        <div className="outro-meta"><span>Prepared by</span><strong>Uday Rathore<br />ArtWorksIT</strong></div>
+      </section>
     </main>
   );
 }
