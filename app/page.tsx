@@ -223,13 +223,9 @@ export default function Home() {
             <p>The platform is proposed to support both wedding and corporate events. While the underlying planning flow will remain similar, the experience can accommodate the different requirements and contexts of each event type.</p>
           </div>
         </div>
-        <div className="client-details">
-          <div><span>Client contact</span><p>Prranit Bhanne, Co-Founder, ConnectX Events</p></div>
-          <div><span>Mobile</span><p>+91 9820795394 / +91 9076355556</p></div>
-          <div><span>Email</span><p>prranit.bhanne@connectxevents.com<br />info@connectxevents.com</p></div>
-          <div><span>Instagram</span><p>connectx_events</p></div>
-          <div><span>Co-Founders</span><p>Prranit Bhanne and Mukesh Tekchandani</p></div>
-          <div className="client-address"><span>Office address</span><p>Office no. 1116 / 1117, 11th Floor, Chandak Unicorn Bldg, Dattaji Salve Marg, Off Veera Desai Rd, Jeevan Nagar, Andheri West, Mumbai, Maharashtra 400053</p></div>
+        <div className="founders-note">
+          <span>Co-Founders</span>
+          <p>Prranit Bhanne and Mukesh Tekchandani</p>
         </div>
       </section>
 
@@ -239,14 +235,21 @@ export default function Home() {
           <h2>Project Scope &amp; Timelines</h2>
           <p>A key objective will be to ensure that the platform is not approached simply as a marketplace for venues or individual vendors. The proposed experience will instead begin functioning as an event planning platform from Phase One.</p>
         </div>
+        <div className="timeline-summary">
+          <div><span>Proposed project start</span><strong>1st September 2026</strong></div>
+          <div><span>Proposed project completion</span><strong>Mid-November 2026</strong></div>
+          <div><span>Project timeline</span><strong>Approximately 10 to 11 weeks</strong></div>
+        </div>
         <div className="stage-list">
           {stages.map((stage) => (
             <article className="stage" key={stage.number}>
-              <div className="stage-head"><span>{stage.number}</span><p>{stage.duration}</p></div>
-              <h3>{stage.title}</h3>
-              <div className="stage-copy">{stage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-              <div className="deliverable"><span>Deliverables</span><p>{stage.deliverable}</p></div>
-              {stage.uat && <div className="uat-note"><span>UAT</span><p>{stage.uat}</p></div>}
+              <div className="timeline-marker" aria-hidden="true"><span>{stage.number}</span></div>
+              <div className="stage-body">
+                <div className="stage-head"><h3>{stage.title}</h3><p>{stage.duration}</p></div>
+                <div className="stage-copy">{stage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+                <div className="deliverable"><span>Deliverables</span><p>{stage.deliverable}</p></div>
+                {stage.uat && <div className="uat-note"><span>UAT</span><p>{stage.uat}</p></div>}
+              </div>
             </article>
           ))}
         </div>
@@ -296,18 +299,8 @@ export default function Home() {
       </section>
 
       <section className="section timeline-section" id="timeline">
-        <div className="section-index">06 / Project Timeline &amp; Pricing</div>
-        <div className="section-content timeline-grid">
-          <div>
-            <h2>Project Timeline</h2>
-            <p className="timeline-note">The proposed project timeline is from 1st September 2026 to mid-November 2026, approximately 10 to 11 weeks.</p>
-          </div>
-          <div className="date-block">
-            <div><span>Proposed project start</span><strong>1st September 2026</strong></div>
-            <div><span>Proposed project completion</span><strong>Mid-November 2026</strong></div>
-          </div>
-        </div>
-        <div className="commercials">
+        <div className="section-index">06 / Pricing &amp; Milestones</div>
+        <div className="section-content commercials pricing-commercials">
           <div className="commercials-intro">
             <h3>Pricing &amp; Milestones</h3>
             <p>The total proposed price for Phase One of this project is <strong>₹10,00,000 + GST.</strong></p>

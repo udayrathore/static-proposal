@@ -8,7 +8,7 @@ const items = [
   ["platform", "Platform"],
   ["boundaries", "Boundaries"],
   ["technical", "Technical"],
-  ["timeline", "Timeline"],
+  ["timeline", "Pricing"],
   ["support", "Support"],
   ["terms", "Terms"],
 ];
@@ -48,4 +48,3 @@ export function SectionNav() {
     </nav>
   );
 }
-
