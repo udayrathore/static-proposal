@@ -394,10 +394,9 @@ export default function Home() {
         <div className="outro-top">
           <Logo inverse />
           <div className="outro-top-right">
-            <span>30 August 2026</span>
             <div className="agency-group">
               <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
-              <div><strong>ArtWorksIT</strong><a href="https://artworksit.com">artworksit.com</a></div>
+              <div><strong>ArtWorksIT</strong><a href="https://artworksit.com" target="_blank" rel="noopener noreferrer">artworksit.com</a></div>
             </div>
           </div>
         </div>
