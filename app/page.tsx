@@ -215,7 +215,27 @@ function DeliverableIcon({ stage }: { stage: string }) {
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <div data-load-wrap className="loader">
+        <div data-load-bg className="loader__bg">
+          <div data-load-progress className="loader__bg-bar" />
+        </div>
+        <div data-load-container className="loader__container">
+          <div className="loader__logo-wrap">
+            <div className="loader__logo-item is--base">
+              <img src="/loader-logo.svg" alt="" className="loader__logo-img" />
+            </div>
+            <div data-load-logo className="loader__logo-item is--top">
+              <img src="/loader-logo.svg" alt="ConnectX and ArtWorksIT" className="loader__logo-img" />
+            </div>
+          </div>
+          <div className="loader__text-wrap">
+            <span data-load-text data-load-reset className="loader__text-el">Hold tight</span>
+            <span data-load-text data-load-reset className="loader__text-el">Hi there!</span>
+          </div>
+        </div>
+      </div>
+      <main>
       <header className="masthead">
         <a className="logo-link" href="#top" aria-label="ConnectX proposal home"><Logo /></a>
         <p>Proposal</p>
@@ -420,6 +440,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

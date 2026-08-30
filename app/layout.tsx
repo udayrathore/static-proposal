@@ -23,7 +23,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${onest.variable} ${inter.variable}`}>
         {children}
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js" defer />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer />
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer />
+        <script src="/logo-loader.js" defer />
         <script src="/proposal-motion.js" defer />
       </body>
     </html>
