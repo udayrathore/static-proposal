@@ -21,7 +21,7 @@ const details = [
   ["Account Type", "CURRENT"],
   ["MMID", "9240873"],
   ["Swift Code", "HDFCINBB"],
-  ["IEC Code", "AUEPD09"],
+  ["IEC Code", "AUEPD0994N"],
 ] as const;
 
 const copyText = details.map(([label, value]) => `${label}: ${value}`).join("\n");
