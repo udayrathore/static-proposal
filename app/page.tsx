@@ -227,7 +227,6 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Proposed</p>
           <h1>Wedding &amp; Corporate<br />Event Planning Platform</h1>
-          <p className="hero-deck">Proposal</p>
         </div>
         <div className="hero-meta">
           <div><span>Prepared by</span><strong>ArtWorksIT</strong></div>
