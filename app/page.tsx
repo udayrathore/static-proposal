@@ -67,6 +67,16 @@ const stages = [
   },
 ];
 
+const scheduleWeeks = ["31 Aug", "7 Sep", "14 Sep", "21 Sep", "28 Sep", "5 Oct", "12 Oct", "19 Oct", "26 Oct", "2 Nov", "9 Nov"];
+
+const scheduleTracks = [
+  { number: "01", title: "Research & Product Definition", start: 1, span: 2 },
+  { number: "02", title: "Wireframing & User Experience", start: 1, span: 2 },
+  { number: "03", title: "Design & Prototyping", start: 3, span: 3 },
+  { number: "04", title: "Development", start: 1, span: 11 },
+  { number: "05", title: "Testing & Launch", start: 11, span: 1 },
+];
+
 const scopeItems = [
   {
     number: "01",
@@ -245,6 +255,25 @@ export default function Home() {
           <div><span>Proposed project completion</span><strong>Mid-November 2026</strong></div>
           <div><span>Project timeline</span><strong>Approximately 10 to 11 weeks</strong></div>
         </div>
+        <div className="parallel-timeline" aria-label="Parallel project schedule from 31 August to mid-November 2026">
+          <div className="schedule-scroll">
+            <div className="schedule-chart">
+              <div className="schedule-corner">Phase</div>
+              <div className="schedule-weeks">
+                {scheduleWeeks.map((week) => <span key={week}>{week}</span>)}
+              </div>
+              {scheduleTracks.map((track) => (
+                <div className="schedule-row" key={track.number}>
+                  <div className="schedule-label"><span>{track.number}</span><strong>{track.title}</strong></div>
+                  <div className="schedule-grid" aria-hidden="true">
+                    <span className={`schedule-bar track-${track.number}`} style={{ gridColumn: `${track.start} / span ${track.span}` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="schedule-note">The parallel tracks indicate where project stages overlap.</p>
+        </div>
         <div className="stage-list">
           {stages.map((stage) => (
             <article className="stage" key={stage.number}>
@@ -354,7 +383,16 @@ export default function Home() {
           <p>Statement of Work</p>
           <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
         </div>
-        <div className="outro-meta"><span>Prepared by</span><strong>Uday Rathore<br />ArtWorksIT</strong></div>
+        <div className="outro-meta">
+          <span>Prepared by</span>
+          <div className="prepared-by">
+            <img src="/artworksit-logo.png" alt="ArtWorksIT" width="92" height="91" />
+            <strong>Uday Rathore<br />ArtWorksIT</strong>
+            <a className="call-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204" title="Call +91 87927 45204">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );
