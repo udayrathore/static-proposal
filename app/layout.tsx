@@ -7,10 +7,10 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://connectx-statement-of-work-2026.artworksit-9888.chatgpt.site"),
-  title: "ConnectX — Statement of Work",
+  title: "ConnectX — Proposal",
   description: "Phase One proposal for the ConnectX wedding and corporate event planning platform, prepared by ArtWorksIT.",
   openGraph: {
-    title: "ConnectX — Statement of Work",
+    title: "ConnectX — Proposal",
     description: "Proposed wedding and corporate event planning platform, prepared by ArtWorksIT.",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "ConnectX Statement of Work" }],

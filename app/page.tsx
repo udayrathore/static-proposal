@@ -218,7 +218,7 @@ export default function Home() {
     <main>
       <header className="masthead">
         <a className="logo-link" href="#top" aria-label="ConnectX proposal home"><Logo /></a>
-        <p>Statement of Work</p>
+        <p>Proposal</p>
         <p className="masthead-date">30 August 2026</p>
       </header>
 
@@ -227,7 +227,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Proposed</p>
           <h1>Wedding &amp; Corporate<br />Event Planning Platform</h1>
-          <p className="hero-deck">Statement of Work</p>
+          <p className="hero-deck">Proposal</p>
         </div>
         <div className="hero-meta">
           <div><span>Prepared by</span><strong>ArtWorksIT</strong></div>
@@ -403,7 +403,7 @@ export default function Home() {
           </div>
         </div>
         <div className="outro-content">
-          <p>Statement of Work</p>
+          <p>Proposal</p>
           <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
         </div>
         <div className="outro-meta">
