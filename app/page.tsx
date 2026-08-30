@@ -80,64 +80,91 @@ const scheduleTracks = [
 const scopeItems = [
   {
     number: "01",
-    title: "Event Creation & Planning",
-    paragraphs: ["Users will be able to create an event and define its primary details, including event dates and the individual sub-events that form part of the overall occasion."],
+    title: "Customer Experience",
+    paragraphs: ["The proposed platform gives customers a central place to define their event requirements, discover suitable vendors and venues, manage enquiries and track their planning progress."],
     list: [
-      "Wedding events and their individual functions or ceremonies.",
-      "Corporate events and destination-oriented event requirements.",
-      "Separate planning flows for individual sub-events.",
-      "A central view of the overall event and its planning status.",
+      "Create an event and define its key details.",
+      "Break the event into individual sub-events, functions or ceremonies.",
+      "Define requirements such as budget, location, event type, preferred style and other relevant preferences.",
+      "Search for vendors based on their specific requirements.",
+      "View only vendors whose profile, specialisation and availability are relevant to those requirements.",
+      "Explore vendor profiles, portfolios and relevant information.",
+      "Enquire with vendors and receive proposals.",
+      "Participate in proposal and negotiation workflows.",
+      "Track vendors and services that have been shortlisted or finalised.",
+      "Monitor the overall progress of their event.",
+      "Receive relevant notifications throughout the planning process.",
+    ],
+    closingParagraphs: [
+      "The same principle applies to venue discovery. Customers can specify requirements such as destination, event dates, expected requirements, budget and property preferences, allowing the platform to surface relevant available venues rather than presenting an unrestricted list of properties.",
+      "The proposed customer experience therefore moves beyond simple vendor browsing. It establishes the foundation for progressively more relevant matching and recommendations as the platform evolves.",
     ],
   },
   {
     number: "02",
-    title: "Vendor Discovery & Selection",
-    paragraphs: [
-      "The proposed platform will allow users to discover and select vendors across relevant event categories such as venues, photography, decoration, SFX, choreography and other event services.",
-      "Vendor recommendations may be surfaced based on requirements such as budget, location, style and other relevant event preferences.",
+    title: "Vendor Experience",
+    paragraphs: ["The proposed platform will give vendors a structured environment to present their services, define their specialisations and manage their availability."],
+    list: [
+      "Maintain a structured vendor profile.",
+      "Define their services and areas of specialisation.",
+      "Specify category-specific attributes. For example, photographers may identify their preferred photography styles.",
+      "Manage availability by blocking dates on their calendar.",
+      "Receive enquiries based on relevant event and service requirements.",
+      "Review customer and sub-event requirements.",
+      "Respond with proposals.",
+      "Participate in proposal and negotiation workflows.",
+      "Receive relevant notifications.",
+      "Track the status of their customer interactions.",
+    ],
+    closingParagraphs: [
+      "Vendor information will actively contribute to the matching process. Specialisation, availability, location, budget suitability and other relevant attributes can influence which vendors are surfaced to a customer.",
     ],
   },
   {
     number: "03",
-    title: "Vendor Profiles",
-    paragraphs: ["The platform will provide profiles for vendors and customers, creating a structured interface through which relevant information can be presented and interactions can take place."],
+    title: "Venue Owner Experience",
+    paragraphs: [
+      "Venue booking will be treated as a dedicated module within the platform.",
+      "Although venues form part of the wider vendor ecosystem, the nature of venue enquiries and negotiations makes them sufficiently different to warrant a dedicated experience.",
+      "The proposed venue module will focus particularly on properties relevant to destination weddings and other high-value events, including luxury hotels, five-star properties, heritage properties and other specialised venues.",
+    ],
+    list: [
+      "Maintain a structured property profile.",
+      "Present property information, imagery, facilities and relevant event capabilities.",
+      "Define the types of events and functions the property can accommodate.",
+      "Manage relevant availability.",
+      "Receive enquiries based on customer event requirements.",
+      "Review event dates, requirements and sub-event information.",
+      "Respond to venue enquiries.",
+      "Submit proposals and commercial responses.",
+      "Participate in negotiation workflows.",
+      "Receive notifications and track the status of active enquiries.",
+    ],
+    closingParagraphs: [
+      "Unlike a conventional hotel booking platform, the proposed venue workflow is centred around enquiry, proposal and negotiation, rather than instant booking.",
+      "This is particularly relevant for destination weddings, where venue selection can involve multiple functions, dates, accommodation requirements, property-specific considerations and commercial negotiations.",
+    ],
   },
   {
     number: "04",
-    title: "Proposals & Negotiation",
-    paragraphs: ["Phase One will facilitate vendor enquiries, proposals and negotiation through the platform. Financial transactions are proposed to remain outside the system during this initial phase."],
-    list: [
-      "Users can enquire with relevant vendors.",
-      "Vendors can respond with proposals.",
-      "The platform can facilitate proposal and negotiation workflows.",
-      "Key status changes can be surfaced to the relevant users.",
-    ],
-  },
-  {
-    number: "05",
-    title: "Event Progress & Completion",
+    title: "ConnectX Operations",
     paragraphs: [
-      "The proposed platform will provide users with a way to understand the progress of their event.",
-      "In the initial phase, completion can be represented through key planning actions such as finalising vendors for the relevant sub-events. This metric is intended to evolve as the platform develops and additional event-planning workflows are introduced.",
+      "ConnectX will have a central operational layer connecting customers, vendors and venue owners.",
+      "The proposed administration interface will allow ConnectX to:",
     ],
-  },
-  {
-    number: "06",
-    title: "Notifications & Communication",
-    paragraphs: ["Users and vendors will receive relevant notifications when important events or workflow changes occur within the platform."],
     list: [
-      "Proposal and vendor communication updates.",
-      "Key planning status changes.",
-      "Important event-related notifications.",
-      "Email and platform communication where applicable.",
+      "Manage and oversee customers, vendors and venue owners.",
+      "View event, sub-event, vendor and venue information.",
+      "Monitor enquiries, proposals and negotiations.",
+      "Participate in or mediate customer, vendor and venue interactions.",
+      "Track event and booking progress.",
+      "Manage relevant platform data and workflows.",
+      "Intervene when a customer requires assistance.",
+      "Coordinate venue enquiries and negotiations where required.",
+      "Support hybrid or offline workflows where ConnectX becomes directly involved in delivering or coordinating a service.",
     ],
-  },
-  {
-    number: "07",
-    title: "ConnectX Administration",
-    paragraphs: [
-      "An administrative interface will allow the ConnectX team to participate in and mediate relevant workflows between customers and vendors.",
-      "The administrative layer is intended to provide ConnectX with visibility and control over the platform while supporting the possibility of future hybrid and offline service models.",
+    closingParagraphs: [
+      "This operational layer is particularly important for venue booking, where ConnectX may need to facilitate communication and negotiation between the customer and property rather than simply allowing the two parties to transact independently.",
     ],
   },
 ];
@@ -322,9 +349,13 @@ export default function Home() {
       </section>
 
       <section className="section dark-section" id="platform">
-        <div className="section-index">03 / Core Platform Scope</div>
+        <div className="section-index">03 / The Platform</div>
         <div className="section-content platform-title">
-          <h2>Core Platform Scope</h2>
+          <h2>The Platform</h2>
+          <div className="platform-summary">
+            <p>The proposed ConnectX platform is built around four connected experiences: the customer organising an event, vendors providing event services, venue owners managing their properties, and ConnectX operating the ecosystem between them.</p>
+            <p>The four experiences are connected through a common planning, enquiry, availability and negotiation system.</p>
+          </div>
         </div>
         <div className="scope-list">
           {scopeItems.map((item) => (
@@ -334,6 +365,7 @@ export default function Home() {
                 <h3>{item.title}</h3>
                 <div className="scope-copy">{item.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                 {item.list && <ul>{item.list.map((entry) => <li key={entry}>{entry}</li>)}</ul>}
+                {item.closingParagraphs && <div className="scope-copy scope-closing">{item.closingParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
               </div>
             </article>
           ))}
