@@ -6,7 +6,7 @@ const onest = Onest({ variable: "--font-onest", subsets: ["latin"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://connectx-statement-of-work-2026.artworksit-9888.chatgpt.site"),
+  metadataBase: new URL("https://static-proposal-one.vercel.app"),
   title: "ConnectX — Proposal",
   description: "Phase One proposal for the ConnectX wedding and corporate event planning platform, prepared by ArtWorksIT.",
   openGraph: {
