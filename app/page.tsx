@@ -151,12 +151,12 @@ const boundaries = [
 ];
 
 const technical = [
-  "Responsive web application architecture",
-  "Backend and database-driven workflows",
-  "Customer, vendor and administrative interfaces",
-  "Structured vendor and event data",
-  "Notification and communication workflows",
-  "Scalable architecture for future product enhancements",
+  "Laravel",
+  "Filament",
+  "GSAP",
+  "Livewire",
+  "Alpine JS",
+  "MYSQL",
 ];
 
 const support = [
@@ -286,11 +286,12 @@ export default function Home() {
           </div>
           <p className="schedule-note">The parallel tracks indicate where project stages overlap.</p>
         </div>
-        <div className="stage-list">
+        <div className="stage-list" data-step-timeline-init="" data-step-timeline-activation="0.5">
+          <div className="step-timeline__line" data-step-timeline-line=""><div className="step-timeline__fill" data-step-timeline-fill="" /></div>
           {stages.map((stage) => (
-            <article className="stage" key={stage.number}>
-              <div className="timeline-marker"><span>{stage.date}</span></div>
-              <div className="stage-body">
+            <article className="stage" key={stage.number} data-step-timeline-item="">
+              <div className="timeline-marker" data-step-timeline-marker=""><span>{stage.date}</span></div>
+              <div className="stage-body step-timeline__content">
                 <div className="stage-head"><h3>{stage.title}</h3><p>{stage.duration}</p></div>
                 <div className="stage-copy">{stage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                 <div className="deliverable"><DeliverableIcon stage={stage.number} /><div><span>Deliverables</span><p>{stage.deliverable}</p></div></div>
@@ -323,7 +324,7 @@ export default function Home() {
       <section className="section blue-section" id="boundaries">
         <div className="section-index">04 / Phase One Boundaries</div>
         <div className="section-content boundary-grid">
-          <h2>Phase One Boundaries</h2>
+          <h2 className="sticky-section-heading">Phase One Boundaries</h2>
           <div>
             <p className="boundary-lead">Phase One is proposed as the foundation of the ConnectX platform. The system will be structured with future expansion in mind. Any subsequent phase or additional functionality will be scoped and commercialised separately.</p>
             <ol className="boundary-list">{boundaries.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol>
@@ -332,14 +333,13 @@ export default function Home() {
       </section>
 
       <section className="section paper" id="technical">
-        <div className="section-index">05 / Technology &amp; Product Considerations</div>
+        <div className="section-index">05 / Proposed Tech Stack</div>
         <div className="section-content technical-grid">
-          <h2>Technology &amp; Product Considerations</h2>
+          <h2>Proposed Tech Stack</h2>
           <div>
             <ol className="technical-list">
               {technical.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}
             </ol>
-            <p className="technology-note">The proposed technology stack includes Laravel, Livewire, Alpine.js, TailwindCSS and GSAP. The front-end implementation may use additional supporting technologies where appropriate based on the requirements identified during development.</p>
           </div>
         </div>
       </section>
@@ -369,7 +369,7 @@ export default function Home() {
       <section className="section support-section" id="support">
         <div className="section-index">07 / Support &amp; Maintenance</div>
         <div className="section-content support-grid">
-          <h2>Support &amp; Maintenance</h2>
+          <h2 className="sticky-section-heading">Support &amp; Maintenance</h2>
           <ol className="support-list">{support.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol>
         </div>
       </section>
@@ -391,23 +391,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="outro-section">
-        <div className="outro-top"><Logo inverse /><span>30 August 2026</span></div>
+      <section className="outro-section" data-section-dock-hide="20">
+        <div className="outro-top">
+          <Logo inverse />
+          <div className="outro-top-right">
+            <span>30 August 2026</span>
+            <div className="agency-group">
+              <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
+              <div><strong>ArtWorksIT</strong><a href="https://artworksit.com">artworksit.com</a></div>
+            </div>
+          </div>
+        </div>
         <div className="outro-content">
           <p>Statement of Work</p>
           <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
         </div>
         <div className="outro-meta">
-          <div className="agency-group">
-            <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
-            <div><strong>ArtWorksIT</strong><a href="https://artworksit.com">artworksit.com</a></div>
-          </div>
           <div className="signatory-group">
             <img src="/uday-rathore-signature.png" alt="Signature of Uday Rathore" width="871" height="477" />
-            <div><span>Prepared by</span><strong>Uday Rathore</strong></div>
-            <a className="call-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204" title="Call +91 87927 45204">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
-            </a>
+            <div className="signatory-details">
+              <div><span>Prepared by</span><strong>Uday Rathore</strong></div>
+              <a className="call-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204" title="Call +91 87927 45204">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
+              </a>
+            </div>
           </div>
           <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>

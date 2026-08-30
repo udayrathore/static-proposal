@@ -1,49 +1,45 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 const items = [
   ["overview", "Overview"],
   ["process", "Process"],
   ["platform", "Platform"],
   ["boundaries", "Boundaries"],
-  ["technical", "Technical"],
+  ["technical", "Tech Stack"],
   ["timeline", "Pricing"],
   ["support", "Support"],
   ["terms", "Terms"],
 ];
 
 export function SectionNav() {
-  const [active, setActive] = useState("overview");
-
-  useEffect(() => {
-    const sections = items
-      .map(([id]) => document.getElementById(id))
-      .filter((section): section is HTMLElement => Boolean(section));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: "-15% 0px -65% 0px", threshold: [0, 0.1, 0.3] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <nav className="section-nav" aria-label="Proposal sections">
-      <div>
-        {items.map(([id, label], index) => (
-          <a href={`#${id}`} key={id} className={active === id ? "active" : ""}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            {label}
-          </a>
-        ))}
+    <nav data-section-dock-init="" aria-label="Proposal sections" className="section-dock">
+      <div data-section-dock-pill="" className="section-dock__pill">
+        <button data-section-dock-toggle="" aria-label="Open proposal sections" aria-expanded="false" aria-controls="section-dock-list" className="section-dock__toggle">
+          <span data-section-dock-label-wrap="" className="section-dock__label-wrap">
+            <span className="section-dock__label">
+              <span className="section-dock__link-num">01</span>
+              <span>Overview</span>
+            </span>
+          </span>
+        </button>
+        <div data-section-dock-list="" id="section-dock-list" className="section-dock__list">
+          <div data-section-dock-indicator="" className="section-dock__indicator" />
+          <ul className="section-dock__items">
+            {items.map(([id, label], index) => (
+              <li key={id}>
+                <a
+                  data-section-dock-link=""
+                  data-active={index === 0 ? "" : undefined}
+                  aria-current={index === 0 ? "location" : undefined}
+                  href={`#${id}`}
+                  className="section-dock__link"
+                >
+                  <span className="section-dock__link-num">{String(index + 1).padStart(2, "0")}</span>
+                  <span>{label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
