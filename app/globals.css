@@ -251,6 +251,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:24px;
 }
 
 /* Latest annotation refinements */
+.system-overview{border-top:0}
 #process .timeline-summary,#process .schedule-chart,#process .stage-list,#process .stage-head{border-color:var(--line)}
 .outro-meta{grid-template-columns:max-content 1fr;width:100%}
 .download-link{justify-self:end}
