@@ -370,6 +370,42 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <div className="system-overview" aria-labelledby="system-overview-title">
+          <div className="system-overview-heading">
+            <span>System overview</span>
+            <h3 id="system-overview-title">The connected ecosystem</h3>
+          </div>
+          <div className="operations-layer">
+            <div className="operations-label">
+              <span>Operational layer</span>
+              <strong>ConnectX Operations</strong>
+              <p>Coordinates &amp; facilitates</p>
+            </div>
+            <div className="ecosystem-flow">
+              <div className="flow-node flow-customer">
+                <span>01</span>
+                <strong>Customer</strong>
+                <p>Plans &amp; discovers</p>
+              </div>
+              <div className="flow-core">
+                <span>ConnectX</span>
+                <strong>Event planning &amp; vendor ecosystem</strong>
+              </div>
+              <div className="flow-branches">
+                <div className="flow-node">
+                  <span>02</span>
+                  <strong>Vendor</strong>
+                  <p>Offers &amp; responds</p>
+                </div>
+                <div className="flow-node">
+                  <span>03</span>
+                  <strong>Venue Owner</strong>
+                  <p>Properties &amp; negotiations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="section blue-section" id="boundaries">
