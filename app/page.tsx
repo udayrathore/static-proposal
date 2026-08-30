@@ -29,9 +29,9 @@ const stages = [
   },
   {
     number: "03",
-    date: "14 Sep – 4 Oct 2026",
+    date: "4 Sep – Mid-Oct 2026",
     title: "Design & Prototyping",
-    duration: "3 weeks",
+    duration: "A little over one month",
     paragraphs: [
       "Once the product structure and wireframes have been established, we will develop the visual language and interface design for the platform.",
       "This will include typography, layout, interface components, graphics, visual hierarchy and interaction patterns. Particular attention will be given to making a data-heavy application understandable and accessible, with information presented in a way that allows users to quickly understand what is happening within their event.",
@@ -42,7 +42,7 @@ const stages = [
   },
   {
     number: "04",
-    date: "31 Aug – Mid-Nov 2026",
+    date: "21 Sep – Mid-Nov 2026",
     title: "Development",
     duration: "Runs progressively through the development period",
     paragraphs: [
@@ -72,8 +72,8 @@ const scheduleWeeks = ["31 Aug", "7 Sep", "14 Sep", "21 Sep", "28 Sep", "5 Oct",
 const scheduleTracks = [
   { number: "01", title: "Research & Product Definition", start: 1, span: 2 },
   { number: "02", title: "Wireframing & User Experience", start: 1, span: 2 },
-  { number: "03", title: "Design & Prototyping", start: 3, span: 3 },
-  { number: "04", title: "Development", start: 1, span: 11 },
+  { number: "03", title: "Design & Prototyping", start: 1, span: 7 },
+  { number: "04", title: "Development", start: 4, span: 8 },
   { number: "05", title: "Testing & Launch", start: 11, span: 1 },
 ];
 
@@ -201,6 +201,18 @@ function Logo({ inverse = false }: { inverse?: boolean }) {
   return <img className={inverse ? "brand-logo inverse" : "brand-logo"} src="/connectx-logo.png" alt="ConnectX Events" width="201" height="61" />;
 }
 
+function DeliverableIcon({ stage }: { stage: string }) {
+  const paths: Record<string, React.ReactNode> = {
+    "01": <><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2.1 4.9-4.9 2.1 2.1-4.9 4.9-2.1Z" /></>,
+    "02": <><rect x="3" y="4" width="18" height="16" rx="1.5" /><path d="M3 9h18M9 9v11" /></>,
+    "03": <><circle cx="12" cy="12" r="9" /><circle cx="8.5" cy="10" r="1" /><circle cx="12" cy="7.5" r="1" /><circle cx="15.5" cy="10" r="1" /><path d="M12 21c1.7 0 2.4-1.4 1.5-2.6-.7-1 .1-2.4 1.4-2.4H17a4 4 0 0 0 4-4" /></>,
+    "04": <><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" /></>,
+    "05": <><circle cx="12" cy="12" r="9" /><path d="m8 12 2.7 2.7L16.5 9" /></>,
+  };
+
+  return <svg className="deliverable-icon" viewBox="0 0 24 24" aria-hidden="true">{paths[stage]}</svg>;
+}
+
 export default function Home() {
   return (
     <main>
@@ -281,7 +293,7 @@ export default function Home() {
               <div className="stage-body">
                 <div className="stage-head"><h3>{stage.title}</h3><p>{stage.duration}</p></div>
                 <div className="stage-copy">{stage.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-                <div className="deliverable"><span>Deliverables</span><p>{stage.deliverable}</p></div>
+                <div className="deliverable"><DeliverableIcon stage={stage.number} /><div><span>Deliverables</span><p>{stage.deliverable}</p></div></div>
                 {stage.uat && <div className="uat-note"><span>UAT</span><p>{stage.uat}</p></div>}
               </div>
             </article>
@@ -313,7 +325,7 @@ export default function Home() {
         <div className="section-content boundary-grid">
           <h2>Phase One Boundaries</h2>
           <div>
-            <p className="boundary-lead">Phase One is proposed as the foundation of the ConnectX platform. The system will be structured with future expansion in mind, while the ₹10,00,000 + GST fee covers only the Phase One scope described in this proposal. Any subsequent phase or additional functionality will be scoped and commercialised separately.</p>
+            <p className="boundary-lead">Phase One is proposed as the foundation of the ConnectX platform. The system will be structured with future expansion in mind. Any subsequent phase or additional functionality will be scoped and commercialised separately.</p>
             <ol className="boundary-list">{boundaries.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol>
           </div>
         </div>
@@ -332,13 +344,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section timeline-section" id="timeline">
+      <section className="section paper pricing-section" id="timeline">
         <div className="section-index">06 / Pricing &amp; Milestones</div>
-        <div className="section-content commercials pricing-commercials">
-          <div className="commercials-intro">
-            <h3>Pricing &amp; Milestones</h3>
+        <div className="section-content pricing-layout">
+          <div className="pricing-heading">
+            <h2>Pricing &amp; Milestones</h2>
+            <div className="pricing-summary">
             <p>The total proposed price for Phase One of this project is <strong>₹10,00,000 + GST.</strong></p>
             <p>The proposed payment structure consists of three milestones.</p>
+            </div>
           </div>
           <table className="milestone-table">
             <caption className="sr-only">Payment milestones</caption>
@@ -384,14 +398,21 @@ export default function Home() {
           <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
         </div>
         <div className="outro-meta">
-          <span>Prepared by</span>
-          <div className="prepared-by">
-            <img src="/artworksit-logo.png" alt="ArtWorksIT" width="92" height="91" />
-            <strong>Uday Rathore<br />ArtWorksIT</strong>
+          <div className="agency-group">
+            <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
+            <div><strong>ArtWorksIT</strong><a href="https://artworksit.com">artworksit.com</a></div>
+          </div>
+          <div className="signatory-group">
+            <img src="/uday-rathore-signature.png" alt="Signature of Uday Rathore" width="871" height="477" />
+            <div><span>Prepared by</span><strong>Uday Rathore</strong></div>
             <a className="call-link" href="tel:+918792745204" aria-label="Call Uday Rathore at +91 87927 45204" title="Call +91 87927 45204">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.36 2.3.54 3.6.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.18 2.46.54 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" /></svg>
             </a>
           </div>
+          <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>
+            <span><small>PDF document</small>Download proposal</span>
+          </a>
         </div>
       </section>
     </main>
