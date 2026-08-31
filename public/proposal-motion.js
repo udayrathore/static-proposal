@@ -328,8 +328,92 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initPageEntranceMotion() {
+    if (!window.gsap || !window.ScrollTrigger || !window.SplitText) return;
+    const gsap = window.gsap;
+    const ScrollTrigger = window.ScrollTrigger;
+    const SplitText = window.SplitText;
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const heroHeading = document.querySelector("[data-hero-heading]");
+
+    if (heroHeading && !reduceMotion.matches) {
+      const heroSplit = new SplitText(heroHeading, { type: "words,chars", mask: "chars", wordsClass: "hero-heading__word", charsClass: "hero-heading__char" });
+      gsap.set(heroSplit.chars, { yPercent: 118, autoAlpha: 0 });
+
+      const revealHero = () => {
+        gsap.to(heroSplit.chars, {
+          yPercent: 0,
+          autoAlpha: 1,
+          duration: 0.95,
+          ease: "power3.out",
+          stagger: { each: 0.018 },
+        });
+      };
+
+      if (document.body.dataset.proposalReady === "true") revealHero();
+      else window.addEventListener("proposal:ready", revealHero, { once: true });
+    }
+
+    const revealTargets = Array.from(document.querySelectorAll([
+      ".section > .section-index",
+      ".section > .section-content",
+      ".section > .founders-note",
+      ".section > .timeline-summary",
+      ".section > .parallel-timeline",
+      ".stage-list .stage",
+      ".scope-list .scope-item",
+      ".system-overview",
+      ".boundary-list li",
+      ".technical-list li",
+      ".milestone-table .table-row",
+      ".support-list li",
+      ".terms-list details",
+      ".outro-top",
+      ".outro-meta",
+    ].join(",")));
+
+    if (!reduceMotion.matches) {
+      revealTargets.forEach((target) => {
+        gsap.fromTo(target, { y: 34, autoAlpha: 0 }, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: target,
+            start: "top 91%",
+            once: true,
+          },
+        });
+      });
+    }
+
+    const footerLetters = Array.from(document.querySelectorAll("[data-artworksit-word] > span"));
+    if (footerLetters.length && !reduceMotion.matches) {
+      gsap.fromTo(footerLetters, { yPercent: 55, scaleY: 0.08, autoAlpha: 0, transformOrigin: "50% 100%" }, {
+        yPercent: 0,
+        scaleY: 1,
+        autoAlpha: 1,
+        duration: 1.25,
+        ease: "expo.out",
+        stagger: { each: 0.065 },
+        scrollTrigger: {
+          trigger: "[data-artworksit-word]",
+          start: "top bottom",
+          once: true,
+        },
+      });
+    }
+  }
+
+  function initProposalMotion() {
     initSectionAnchorDock();
     initStepByStepTimeline();
-  });
+    initPageEntranceMotion();
+  }
+
+  if (document.body.dataset.reactHydrated === "true") initProposalMotion();
+  else window.addEventListener("proposal:hydrated", initProposalMotion, { once: true });
 })();

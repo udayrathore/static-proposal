@@ -97,7 +97,9 @@ const scopeItems = [
       "Receive relevant notifications throughout the planning process.",
     ],
     closingParagraphs: [
-      "The same principle applies to venue discovery. Customers can specify requirements such as destination, event dates, expected requirements, budget and property preferences, allowing the platform to surface relevant available venues rather than presenting an unrestricted list of properties.",
+      "The same principle applies to venue discovery. Customers can specify requirements such as destination, event dates, guest requirements, budget, event type, accommodation needs and property preferences, allowing the platform to surface relevant venue options through an interactive, parameter-based search experience.",
+      "Customers can explore detailed venue profiles, view relevant availability, shortlist properties they are interested in and then initiate an enquiry. Where the requested dates are unavailable, the platform can surface suitable alternative date combinations based on available venue data.",
+      "This allows customers to progressively narrow down a larger set of venues into a shortlist of preferred properties before moving into enquiry, proposal and negotiation.",
       "The proposed customer experience therefore moves beyond simple vendor browsing. It establishes the foundation for progressively more relevant matching and recommendations as the platform evolves.",
     ],
   },
@@ -127,7 +129,8 @@ const scopeItems = [
     paragraphs: [
       "Venue booking will be treated as a dedicated module within the platform.",
       "Although venues form part of the wider vendor ecosystem, the nature of venue enquiries and negotiations makes them sufficiently different to warrant a dedicated experience.",
-      "The proposed venue module will focus particularly on properties relevant to destination weddings and other high-value events, including luxury hotels, five-star properties, heritage properties and other specialised venues.",
+      "The proposed venue module will support destination weddings as well as city weddings, corporate events and other events where venue selection may involve multiple functions, dates, accommodation requirements and commercial negotiations.",
+      "The venue discovery experience will allow customers to search and filter properties based on relevant event parameters, explore detailed property profiles, review availability, shortlist suitable venues and then initiate enquiries and proposal workflows.",
     ],
     list: [
       "Maintain a structured property profile.",
@@ -142,8 +145,10 @@ const scopeItems = [
       "Receive notifications and track the status of active enquiries.",
     ],
     closingParagraphs: [
-      "Unlike a conventional hotel booking platform, the proposed venue workflow is centred around enquiry, proposal and negotiation, rather than instant booking.",
-      "This is particularly relevant for destination weddings, where venue selection can involve multiple functions, dates, accommodation requirements, property-specific considerations and commercial negotiations.",
+      "Unlike a conventional hotel booking platform, the proposed venue workflow is centred around enquiry, proposal and negotiation rather than instant booking.",
+      "Customers can review available venue options, explore their profiles, shortlist preferred properties, request quotes or send enquiries, and proceed into proposal and negotiation workflows. Negotiations may take place directly between the customer and venue or involve the ConnectX team where required.",
+      "Where requested dates are unavailable, suitable alternative dates may also be surfaced based on the availability information available to the platform. This is particularly relevant for events where multiple functions, dates, accommodation requirements and property-specific considerations need to be coordinated.",
+      "Venue availability and alternative-date recommendations will be based on availability data made available to the platform through the agreed data source or vendor/ConnectX inputs; third-party hotel inventory, PMS or channel-manager integrations are not implied unless separately specified.",
     ],
   },
   {
@@ -158,10 +163,10 @@ const scopeItems = [
       "View event, sub-event, vendor and venue information.",
       "Monitor enquiries, proposals and negotiations.",
       "Participate in or mediate customer, vendor and venue interactions.",
-      "Track event and booking progress.",
+      "Track event, venue, enquiry, proposal and negotiation progress.",
       "Manage relevant platform data and workflows.",
       "Intervene when a customer requires assistance.",
-      "Coordinate venue enquiries and negotiations where required.",
+      "Coordinate venue enquiries, proposals and negotiations where required, including cases where ConnectX participates directly between the customer and venue.",
       "Support hybrid or offline workflows where ConnectX becomes directly involved in delivering or coordinating a service.",
     ],
     closingParagraphs: [
@@ -173,7 +178,7 @@ const scopeItems = [
 const boundaries = [
   "Financial transactions are proposed to remain outside the platform during Phase One. The platform will support vendor discovery, enquiries, proposals and negotiations, but will not process or accept payments from users in this phase.",
   "Proposal and negotiation workflows are included within the initial platform concept.",
-  "Future hybrid or fully offline ConnectX-managed workflows can be supported through later phases.",
+  "Customers can choose how they want to work with ConnectX — through the platform independently, through a hybrid model with ConnectX support, or by getting in touch with the ConnectX team for assistance. The platform is designed to allow customers to self-serve where they are comfortable, while providing a clear option to seek ConnectX support when they need help.",
   "AI-assisted functionality is reserved for a future phase and is not included in the current Phase One implementation.",
   "Advanced operational workflows and additional automation can be scoped separately as the product evolves.",
 ];
@@ -273,7 +278,9 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true"><span /><span /><span /><span /></div>
         <div className="hero-copy">
           <p className="eyebrow">Proposed</p>
-          <h1>Wedding &amp; Corporate<br />Event Planning Platform</h1>
+          <h1 data-hero-heading>
+            Wedding &amp;<br className="hero-break-mobile" /> Corporate<br className="hero-break-desktop" /> Event<br className="hero-break-mobile" /> Planning Platform
+          </h1>
         </div>
         <div className="hero-meta">
           <div><span>Prepared by</span><strong>ArtWorksIT</strong></div>
@@ -291,7 +298,7 @@ export default function Home() {
           <h2>Project Objective</h2>
           <div className="measure">
             <p className="lead">ArtWorksIT proposes to design and develop Phase One of a web-based event planning and vendor management platform for ConnectX.</p>
-            <p>The proposed platform will allow users to create and plan events, define individual sub-events, discover and select vendors, facilitate enquiries and negotiations, and track the progress of their event through a centralised interface.</p>
+            <p>The proposed platform will allow users to create and plan events, define individual sub-events, discover and evaluate venues and vendors through parameter-based search, check relevant availability, shortlist options, facilitate enquiries, proposals and negotiations, and track the progress of their event through a centralised interface.</p>
             <p>The initial phase is intended to establish the core planning and marketplace infrastructure while keeping the system flexible enough to support future enhancements, including deeper operational workflows, hybrid or offline service models, and AI-assisted functionality.</p>
             <p>The platform is proposed to support both wedding and corporate events. While the underlying planning flow will remain similar, the experience can accommodate the different requirements and contexts of each event type.</p>
           </div>
@@ -480,7 +487,6 @@ export default function Home() {
 
       <section className="outro-section" data-section-dock-hide="20">
         <div className="outro-top">
-          <Logo inverse />
           <div className="outro-top-right">
             <div className="agency-group">
               <img src="/artworksit-logo.png" alt="ArtWorksIT" width="828" height="823" />
@@ -489,13 +495,11 @@ export default function Home() {
                 <AgencyDetails />
               </div>
             </div>
+            <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download aria-label="Download proposal PDF" title="Download proposal PDF">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>
+              <span><small>PDF document</small>Download proposal</span>
+            </a>
           </div>
-        </div>
-        <div className="outro-content">
-          <p>Proposal</p>
-          <h2>Proposed Wedding &amp; Corporate Event Planning Platform</h2>
-        </div>
-        <div className="outro-meta">
           <div className="signatory-group">
             <img src="/uday-rathore-signature.png" alt="Signature of Uday Rathore" width="871" height="477" />
             <div className="signatory-details">
@@ -509,10 +513,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <a className="download-link" href="/ConnectX-Statement-of-Work.pdf" download aria-label="Download proposal PDF" title="Download proposal PDF">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" /></svg>
-            <span><small>PDF document</small>Download proposal</span>
-          </a>
+        </div>
+        <div className="artworksit-footer-word" data-artworksit-word aria-label="ARTWORKSIT">
+          {Array.from("ARTWORKSIT").map((letter, index) => <span key={`${letter}-${index}`} aria-hidden="true">{letter}</span>)}
         </div>
       </section>
       </main>

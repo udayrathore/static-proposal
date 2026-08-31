@@ -33,6 +33,10 @@
       .to(progressBar, { scaleX: 0, transformOrigin: "right center", duration: 0.5 }, "<")
       .add("hideContent", "<")
       .to(bg, { yPercent: -101, duration: 1 }, "hideContent")
+      .call(() => {
+        document.body.dataset.proposalReady = "true";
+        window.dispatchEvent(new CustomEvent("proposal:ready"));
+      })
       .set(wrap, { display: "none" });
 
     if (resetTargets.length) {
@@ -92,7 +96,6 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initLogoRevealLoader();
-  });
+  if (document.body.dataset.reactHydrated === "true") initLogoRevealLoader();
+  else window.addEventListener("proposal:hydrated", initLogoRevealLoader, { once: true });
 })();
